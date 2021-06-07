@@ -13,7 +13,14 @@ using Infragistics.Win.UltraWinGrid;
 //생산 계획을 내려 어떤 작업장이 효율을 낼 수 있는지 파악 후 적절한 작업지시를 확정짓는다.
 //품목: 원자재(가공 전), 반제품(공정 중), 제품(최종적으로 고객에게 나갈 수 있는 물건), 상품(팔 수 있는 상태)
 //품질관리?
-//4M MAN MATERIAL(원자재) METHOD MACHINE
+//4M MAN MATERIAL(원자재) METHOD MACHINE\
+//ROH/HALB/FERT
+//UPH : 시간당 해당 품목 생산량
+//사이클 타임: 1개 만들어지는데 걸리는 시간
+//적정재고: 우리 공장 창고에 이정도까진 있어도 된다- 
+//최소한으로 이만큼으로 있어야하는 재고
+//유상사급/무상사급이란?
+
 namespace DC_POPUP
 {
     using System;
