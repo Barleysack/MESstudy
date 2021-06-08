@@ -46,6 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MM_StockMM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_StockMM.Designer.cs">
+      <DependentUpon>MM_StockMM.cs</DependentUpon>
+    </Compile>
     <Compile Include="BM_WORKLIST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MM_PoMake%28자재 발주 및 입고%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_PoMake%28자재 발주 및 입고%29.Designer.cs">
+      <DependentUpon>MM_PoMake%28자재 발주 및 입고%29.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +127,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MM_StockMM.resx">
+      <DependentUpon>MM_StockMM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BM_WORKLIST.resx">
       <DependentUpon>BM_WORKLIST.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +137,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MM_PoMake%28자재 발주 및 입고%29.resx">
+      <DependentUpon>MM_PoMake%28자재 발주 및 입고%29.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
