@@ -1,6 +1,6 @@
 ﻿#region < HEADER AREA >
 // *---------------------------------------------------------------------------------------------*
-//   Form ID      : MM_STockMM_M
+//   Form ID      : AP_ProductPlan
 //   Form Name    : 자재 재고관리 
 //   Name Space   : KFQS_Form
 //   Created Date : 2020/08
@@ -22,7 +22,7 @@ using Infragistics.Win.UltraWinGrid;
 
 namespace KFQS_Form
 {
-    public partial class MM_STockMM_M : DC00_WinForm.BaseMDIChildForm
+    public partial class AP_ProductPlan : DC00_WinForm.BaseMDIChildForm
     {
 
         #region < MEMBER AREA >
@@ -35,29 +35,33 @@ namespace KFQS_Form
 
 
         #region < CONSTRUCTOR >
-        public MM_STockMM_M()
+        public AP_ProductPlan()
         {
             InitializeComponent();
         }
         #endregion
-        //MRP 자재 소요량 예측 및 관리자재 소요량 계획은 제조 프로세스를 관리하는 데 사용되는 생산 계획,
-        //일정 및 재고 관리 시스템입니다.
-        //대부분의 MRP 시스템은 소프트웨어 기반이지만 수동으로 MRP를 수행 할 수도 있습니다.
-        //워크 센터 코드? 
+
+
         #region < FORM EVENTS >
-        private void MM_STockMM_M_Load(object sender, EventArgs e)
+        private void AP_ProductPlan_Load(object sender, EventArgs e)
         {
             #region ▶ GRID ◀
             _GridUtil.InitializeGrid(this.grid1, true, true, false, "", false);
-            _GridUtil.InitColumnUltraGrid(grid1, "PLANTCODE",      "공장",     true, GridColDataType_emu.VarChar,    120, 120, Infragistics.Win.HAlign.Left,    true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "ITEMCODE",       "품목",     true, GridColDataType_emu.VarChar,    140, 120, Infragistics.Win.HAlign.Left,    true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "ITEMNAME",       "품목명",   true, GridColDataType_emu.VarChar,    140, 120, Infragistics.Win.HAlign.Left,    true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "MATLOTNO",       "LOTNO",     true, GridColDataType_emu.VarChar,   120, 120, Infragistics.Win.HAlign.Left,    true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "WHCODE",         "입고창고", true, GridColDataType_emu.VarChar,    120, 120, Infragistics.Win.HAlign.Left,    true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "STOCKQTY",       "재고수량", true, GridColDataType_emu.Double,     100, 120, Infragistics.Win.HAlign.Right,   true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "UNITCODE",       "단위",     true, GridColDataType_emu.VarChar,    100, 120, Infragistics.Win.HAlign.Left,   true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "CUSTCODE",       "거래처",   true, GridColDataType_emu.VarChar,    100, 120, Infragistics.Win.HAlign.Left,    true, false);
-            _GridUtil.InitColumnUltraGrid(grid1, "CUSTNAME",       "거래처명", true, GridColDataType_emu.VarChar,    100, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "PLANTCODE", "공장",              true, GridColDataType_emu.VarChar, 120, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "PLANNO", "계획번호",             true, GridColDataType_emu.VarChar, 120, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "ITEMCODE", "생산품목",           true, GridColDataType_emu.VarChar, 300, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "PLANQTY", "계획수량",            true, GridColDataType_emu.Double, 100, 120, Infragistics.Win.HAlign.Right, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "UNITCODE", "단위",               true, GridColDataType_emu.VarChar, 100, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "WORKCENTERCODE", "작업장",       true, GridColDataType_emu.VarChar, 200, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "CHK", "확정",                    true, GridColDataType_emu.CheckBox, 100, 120, Infragistics.Win.HAlign.Center, true, true);
+            _GridUtil.InitColumnUltraGrid(grid1, "ORDERNO", "작업지시번호",        true, GridColDataType_emu.VarChar, 100, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "ORDERDATE", "확정일시",          true, GridColDataType_emu.DateTime24, 120, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "ORDERWORKER", "확정자",          true, GridColDataType_emu.VarChar, 120, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "ORDERCLOSEFLAG", "지시종료여부", true, GridColDataType_emu.VarChar, 120, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "MAKER", "등록자",                true, GridColDataType_emu.VarChar, 120, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "MAKEDATE", "등록일시",           true, GridColDataType_emu.DateTime24, 120, 120, Infragistics.Win.HAlign.Center, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "EDITOR", "수정자"         ,      true, GridColDataType_emu.VarChar, 120, 120, Infragistics.Win.HAlign.Left, true, false);
+            _GridUtil.InitColumnUltraGrid(grid1, "EDITDATE", "수정일시",           true, GridColDataType_emu.DateTime24, 120, 120, Infragistics.Win.HAlign.Center, true, false);
             _GridUtil.SetInitUltraGridBind(grid1);
             #endregion
 
@@ -69,8 +73,14 @@ namespace KFQS_Form
             rtnDtTemp = _Common.Standard_CODE("UNITCODE");     //단위
             UltraGridUtil.SetComboUltraGrid(this.grid1, "UNITCODE", rtnDtTemp, "CODE_ID", "CODE_NAME");
 
-            rtnDtTemp = _Common.Standard_CODE("WHCODE");     //입고 창고
-            UltraGridUtil.SetComboUltraGrid(this.grid1, "WHCODE", rtnDtTemp, "CODE_ID", "CODE_NAME");
+            rtnDtTemp = _Common.Standard_CODE("YESNO");     // 지시 종료 여부
+            UltraGridUtil.SetComboUltraGrid(this.grid1, "ORDERCLOSEFLAG", rtnDtTemp, "CODE_ID", "CODE_NAME");
+            Common.FillComboboxMaster(this.cmbOrderCloseFlag, rtnDtTemp, rtnDtTemp.Columns["CODE_ID"].ColumnName, rtnDtTemp.Columns["CODE_NAME"].ColumnName, "ALL", "");
+
+
+            rtnDtTemp = _Common.GET_Workcenter_Code();     //작업장
+            Common.FillComboboxMaster(this.cmbWorkCenterCode, rtnDtTemp, rtnDtTemp.Columns["CODE_ID"].ColumnName, rtnDtTemp.Columns["CODE_NAME"].ColumnName, "ALL", "");
+            UltraGridUtil.SetComboUltraGrid(this.grid1, "WORKCENTERCODE", rtnDtTemp, "CODE_ID", "CODE_NAME");
 
             // 품목코드 
             //FP  : 완제품
@@ -78,8 +88,8 @@ namespace KFQS_Form
             //R/M : 원자재
             //S/M : 부자재(H / W)
             //SFP : 반제품
-            rtnDtTemp = _Common.GET_ItemCodeFERT_Code("R/M");
-            Common.FillComboboxMaster(this.cboItemCode, rtnDtTemp, rtnDtTemp.Columns["CODE_ID"].ColumnName, rtnDtTemp.Columns["CODE_NAME"].ColumnName, "ALL", "");
+            rtnDtTemp = _Common.GET_ItemCodeFERT_Code("FERT");
+            UltraGridUtil.SetComboUltraGrid(this.grid1, "ITEMCODE", rtnDtTemp, "CODE_ID", "CODE_NAME");
 
             #endregion
 
@@ -106,13 +116,16 @@ namespace KFQS_Form
                 base.DoInquire();
                 _GridUtil.Grid_Clear(grid1);
                 string sPlantCode      = DBHelper.nvlString(this.cboPlantCode.Value);
-                string sItemCode       = DBHelper.nvlString(this.cboItemCode.Value);
-                string sLotNo          = DBHelper.nvlString(txtLotNo.Text);
+                string sWorkcenterCode       = DBHelper.nvlString(this.cmbWorkCenterCode.Value);
+                string sOrderno          = DBHelper.nvlString(txtOrderNo.Text);
+                string sOrderCloseFlag = DBHelper.nvlString(cmbOrderCloseFlag.Value);
 
-                rtnDtTemp = helper.FillTable("04MM_STockMM_S1", CommandType.StoredProcedure
+
+                rtnDtTemp = helper.FillTable("04AP_ProductPlan_S1", CommandType.StoredProcedure
                                     , helper.CreateParameter("PLANTCODE",   sPlantCode,  DbType.String, ParameterDirection.Input)
-                                    , helper.CreateParameter("ITEMCODE",    sItemCode,   DbType.String, ParameterDirection.Input)
-                                    , helper.CreateParameter("LOTNO",       sLotNo,      DbType.String, ParameterDirection.Input)
+                                    , helper.CreateParameter("WORKCENTERCODE", sWorkcenterCode,   DbType.String, ParameterDirection.Input)
+                                    , helper.CreateParameter("ORDERNO", sOrderno,      DbType.String, ParameterDirection.Input)
+                                    , helper.CreateParameter("ORDERCLOSEFLAG", sOrderCloseFlag,      DbType.String, ParameterDirection.Input)
                                     );
 
                this.ClosePrgForm();
