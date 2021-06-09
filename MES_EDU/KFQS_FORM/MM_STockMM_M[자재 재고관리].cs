@@ -80,7 +80,7 @@ namespace KFQS_Form
             //SFP : 반제품
             rtnDtTemp = _Common.GET_ItemCodeFERT_Code("R/M");
             Common.FillComboboxMaster(this.cboItemCode, rtnDtTemp, rtnDtTemp.Columns["CODE_ID"].ColumnName, rtnDtTemp.Columns["CODE_NAME"].ColumnName, "ALL", "");
-
+            
             #endregion
 
             #region ▶ POP-UP ◀

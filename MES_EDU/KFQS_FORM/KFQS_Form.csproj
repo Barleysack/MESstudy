@@ -46,6 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MM_StockOUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_StockOUT.designer.cs">
+      <DependentUpon>MM_StockOUT.cs</DependentUpon>
+    </Compile>
     <Compile Include="AP_ProductPlan[생산계획].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MM_StockOUT.resx">
+      <DependentUpon>MM_StockOUT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AP_ProductPlan[생산계획].resx">
       <DependentUpon>AP_ProductPlan[생산계획].cs</DependentUpon>
     </EmbeddedResource>
