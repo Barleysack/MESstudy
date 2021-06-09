@@ -46,11 +46,11 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MM_StockMM.cs">
+    <Compile Include="MM_STockMM_M[자재 재고관리].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MM_StockMM.Designer.cs">
-      <DependentUpon>MM_StockMM.cs</DependentUpon>
+    <Compile Include="MM_STockMM_M[자재 재고관리].designer.cs">
+      <DependentUpon>MM_STockMM_M[자재 재고관리].cs</DependentUpon>
     </Compile>
     <Compile Include="BM_WORKLIST.cs">
       <SubType>Form</SubType>
@@ -127,8 +127,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MM_StockMM.resx">
-      <DependentUpon>MM_StockMM.cs</DependentUpon>
+    <EmbeddedResource Include="MM_STockMM_M[자재 재고관리].resx">
+      <DependentUpon>MM_STockMM_M[자재 재고관리].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BM_WORKLIST.resx">
       <DependentUpon>BM_WORKLIST.cs</DependentUpon>
