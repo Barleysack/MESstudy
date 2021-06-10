@@ -40,8 +40,10 @@ namespace KFQS_Form
             InitializeComponent();
         }
         #endregion
-
-
+        //MRP 자재 소요량 예측 및 관리자재 소요량 계획은 제조 프로세스를 관리하는 데 사용되는 생산 계획,
+        //일정 및 재고 관리 시스템입니다.
+        //대부분의 MRP 시스템은 소프트웨어 기반이지만 수동으로 MRP를 수행 할 수도 있습니다.
+        //워크 센터 코드? 
         #region < FORM EVENTS >
         private void MM_STockMM_M_Load(object sender, EventArgs e)
         {
@@ -78,7 +80,7 @@ namespace KFQS_Form
             //SFP : 반제품
             rtnDtTemp = _Common.GET_ItemCodeFERT_Code("R/M");
             Common.FillComboboxMaster(this.cboItemCode, rtnDtTemp, rtnDtTemp.Columns["CODE_ID"].ColumnName, rtnDtTemp.Columns["CODE_NAME"].ColumnName, "ALL", "");
-
+            
             #endregion
 
             #region ▶ POP-UP ◀
