@@ -130,7 +130,7 @@ namespace KFQS_Form
                 rtnDtTemp = helper.FillTable("04MM_StockOUT_S1", CommandType.StoredProcedure
                                     , helper.CreateParameter("PLANTCODE",   sPlantCode,  DbType.String, ParameterDirection.Input)
                                     , helper.CreateParameter("ITEMCODE", sItemCode,   DbType.String, ParameterDirection.Input)
-                                    , helper.CreateParameter("LOTNO", sLOTNO,      DbType.String, ParameterDirection.Input)
+                                    , helper.CreateParameter("MATLOTNO", sLOTNO,      DbType.String, ParameterDirection.Input)
                                     , helper.CreateParameter("STARTDATE", sStart, DbType.String, ParameterDirection.Input),
                                       helper.CreateParameter("ENDDATE", sEnd, DbType.String, ParameterDirection.Input));
                 
@@ -174,14 +174,16 @@ namespace KFQS_Form
                 this.grid1.InsertRow();
                 this.grid1.SetDefaultValue("PLANTCODE", this.plantCode);
 
-                grid1.ActiveRow.Cells["PLANNO"].Activation = Activation.NoEdit;
+             
                 grid1.ActiveRow.Cells["CHK"].Activation = Activation.NoEdit;
-                grid1.ActiveRow.Cells["ORDERNO"].Activation = Activation.NoEdit;
-                grid1.ActiveRow.Cells["ORDERWORKER"].Activation = Activation.NoEdit;
-                grid1.ActiveRow.Cells["MAKER"].Activation = Activation.NoEdit;
                 grid1.ActiveRow.Cells["MAKEDATE"].Activation = Activation.NoEdit;
-                grid1.ActiveRow.Cells["EDITOR"].Activation = Activation.NoEdit;
-                grid1.ActiveRow.Cells["EDITDATE"].Activation = Activation.NoEdit;
+           
+               
+             
+         
+          
+                grid1.ActiveRow.Cells["MAKER"].Activation = Activation.NoEdit;
+
                 
 
             }
@@ -198,7 +200,7 @@ namespace KFQS_Form
         {   
            if (Convert.ToString(grid1.ActiveRow.Cells["CHK"].Value) == "1")
             {
-                ShowDialog("작업지시 확정 내역을 취소 후 삭제하십쇼", DialogForm.DialogType.OK);
+                ShowDialog("알맞은 사항을 선택해주세요", DialogForm.DialogType.OK);
                 return;
             }
             base.DoDelete();
@@ -234,7 +236,7 @@ namespace KFQS_Form
                             drRow.RejectChanges();
                             HPHP.ExecuteNoneQuery("04MM_StockOUT_D1", CommandType.StoredProcedure
                                                                     , HPHP.CreateParameter("PLANTCODE", plantCode, DbType.String, ParameterDirection.Input)
-                                                                    , HPHP.CreateParameter("PLANNO", drRow["PLANNO"], DbType.String, ParameterDirection.Input)
+                                                                    , HPHP.CreateParameter("MATLOTNO", drRow["MATLOTNO"], DbType.String, ParameterDirection.Input)
                                                                     );
 
                             #endregion
@@ -246,14 +248,11 @@ namespace KFQS_Form
                             {
                                 sErrorMsg += "품목 ";
                             }
-                            if (Convert.ToString(drRow["PLANQTY"]) == "")
+                            if (Convert.ToString(drRow["STOCKQTY"]) == "")
                             {
                                 sErrorMsg += "수량 ";
                             }
-                            if (Convert.ToString(drRow["WORKCENTERCODE"]) == "")
-                            {
-                                sErrorMsg += "작업장 ";
-                            }
+                            
                             if (sErrorMsg != "")
                             {
                                 this.ClosePrgForm();
@@ -262,25 +261,33 @@ namespace KFQS_Form
                             }
                             HPHP.ExecuteNoneQuery("04MM_StockOUT_I1", CommandType.StoredProcedure
                                                   , HPHP.CreateParameter("PLANTCODE", drRow["PLANTCODE"].ToString(), DbType.String, ParameterDirection.Input)
-                                                  , HPHP.CreateParameter("ITEMCODE", drRow["ITEMCODE"].ToString(), DbType.String, ParameterDirection.Input)
-                                                  , HPHP.CreateParameter("PLANQTY", Convert.ToString(drRow["PLANQTY"]).Replace(",", ""), DbType.String, ParameterDirection.Input)
-                                                  , HPHP.CreateParameter("UNITCODE", drRow["UNITCODE"].ToString(), DbType.String, ParameterDirection.Input)
-                                                  , HPHP.CreateParameter("WORKCENTERCODE", drRow["WORKCENTERCODE"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("MATLOTNO", drRow["MATLOTNO"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("ITEMCODE", Convert.ToString(drRow["ITEMCODE"]), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("WHCODE", drRow["WHCODE"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("STOCKQTY", drRow["STOCKQTY"/*이상하면 여기 고쳐봅시다*/].ToString(), DbType.String, ParameterDirection.Input)
                                                   , HPHP.CreateParameter("MAKER", LoginInfo.UserID, DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("UNITCODE", drRow["UNITCODE"], DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("STORAGELOCCODE", drRow["STORAGELOCCODE"], DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("MAKEDATE", drRow["MAKEDATE"/*이상하면 여기 고쳐봅시다*/], DbType.String, ParameterDirection.Input)
+
                                                   );
 
                             #endregion
                             break;
                         case DataRowState.Modified:
                             #region 수정
-                            string sOrderFalg = string.Empty;
-                            if (Convert.ToString(drRow["CHK"]).ToUpper() == "1") sOrderFalg = "Y";
-                            else sOrderFalg = "N";
+                            string sFalg = string.Empty;
+                            if (Convert.ToString(drRow["CHK"]).ToUpper() == "1") sFalg = "Y";
+                            else sFalg = "N";
 
                             HPHP.ExecuteNoneQuery("04MM_StockOUT_U1", CommandType.StoredProcedure
                                                   , HPHP.CreateParameter("PLANTCODE", drRow["PLANTCODE"].ToString(), DbType.String, ParameterDirection.Input)
-                                                  , HPHP.CreateParameter("PLANNO", drRow["PLANNO"].ToString(), DbType.String, ParameterDirection.Input)
-                                                  , HPHP.CreateParameter("ORDERFLAG", sOrderFalg, DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("MATLOTNO", drRow["MATLOTNO"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("ITEMCODE", drRow["ITEMCODE"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("STOCKQTY", drRow["STOCKQTY"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("UNITCODE", drRow["UNITCODE"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("WHCODE", drRow["WHCODE"].ToString(), DbType.String, ParameterDirection.Input)
+                                                  , HPHP.CreateParameter("WORKERID", LoginInfo.UserID, DbType.String, ParameterDirection.Input)
                                                   , HPHP.CreateParameter("EDITOR", LoginInfo.UserID, DbType.String, ParameterDirection.Input)
                                                   );
 
