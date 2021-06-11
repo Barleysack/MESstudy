@@ -1,6 +1,6 @@
 ﻿namespace KFQS_Form
 {
-    partial class PP_ActualOutProduct
+    partial class PP_ActureOutProduct
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -42,17 +42,17 @@
             Infragistics.Win.Appearance appearance61 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton2 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton3 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton4 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             this.grid1 = new DC00_Component.Grid(this.components);
             this.cboPlantCode = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
             this.sLabel3 = new DC00_Component.SLabel();
@@ -65,22 +65,22 @@
             this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.sLabel2 = new DC00_Component.SLabel();
             this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.sBtnTextEditor1 = new DC00_Component.SBtnTextEditor();
-            this.txtWorkerName = new System.Windows.Forms.TextBox();
-            this.sLabel5 = new DC00_Component.SLabel();
-            this.BTNworker = new Infragistics.Win.Misc.UltraButton();
             this.sLabel6 = new DC00_Component.SLabel();
+            this.BTNworker = new Infragistics.Win.Misc.UltraButton();
+            this.sLabel5 = new DC00_Component.SLabel();
+            this.txtWorkerName = new System.Windows.Forms.TextBox();
+            this.txtWID = new DC00_Component.SBtnTextEditor();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtInLotNo = new System.Windows.Forms.TextBox();
-            this.sLabel7 = new DC00_Component.SLabel();
-            this.BtnLotNOin = new Infragistics.Win.Misc.UltraButton();
-            this.Btn_Run = new Infragistics.Win.Misc.UltraButton();
+            this.Btn_OrderClose = new Infragistics.Win.Misc.UltraButton();
+            this.btn_Product = new Infragistics.Win.Misc.UltraButton();
+            this.txtInferior = new System.Windows.Forms.TextBox();
+            this.sLabel9 = new DC00_Component.SLabel();
             this.txtFine = new System.Windows.Forms.TextBox();
             this.sLabel8 = new DC00_Component.SLabel();
-            this.sLabel9 = new DC00_Component.SLabel();
-            this.txtInferior = new System.Windows.Forms.TextBox();
-            this.btn_Product = new Infragistics.Win.Misc.UltraButton();
-            this.Btn_OrderClose = new Infragistics.Win.Misc.UltraButton();
+            this.Btn_Run = new Infragistics.Win.Misc.UltraButton();
+            this.BtnLotNOin = new Infragistics.Win.Misc.UltraButton();
+            this.txtInLotNo = new System.Windows.Forms.TextBox();
+            this.sLabel7 = new DC00_Component.SLabel();
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).BeginInit();
             this.gbxHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbxBody)).BeginInit();
@@ -92,7 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
             this.ultraGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sBtnTextEditor1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWID)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,6 +212,7 @@
             this.grid1.UpdateMode = Infragistics.Win.UltraWinGrid.UpdateMode.OnCellChange;
             this.grid1.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
             this.grid1.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
+            this.grid1.AfterRowActivate += new System.EventHandler(this.grid1_AfterRowActivate);
             // 
             // cboPlantCode
             // 
@@ -268,7 +269,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.DateButtons.Add(dateButton1);
+            this.dtpEnd.DateButtons.Add(dateButton3);
             this.dtpEnd.Location = new System.Drawing.Point(988, 21);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.NonAutoSizeHeight = 26;
@@ -277,7 +278,7 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.DateButtons.Add(dateButton2);
+            this.dtpStart.DateButtons.Add(dateButton4);
             this.dtpStart.Location = new System.Drawing.Point(820, 21);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.NonAutoSizeHeight = 26;
@@ -350,35 +351,39 @@
             this.ultraGroupBox1.Controls.Add(this.BTNworker);
             this.ultraGroupBox1.Controls.Add(this.sLabel5);
             this.ultraGroupBox1.Controls.Add(this.txtWorkerName);
-            this.ultraGroupBox1.Controls.Add(this.sBtnTextEditor1);
+            this.ultraGroupBox1.Controls.Add(this.txtWID);
             this.ultraGroupBox1.Location = new System.Drawing.Point(27, 84);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
             this.ultraGroupBox1.Size = new System.Drawing.Size(1265, 86);
             this.ultraGroupBox1.TabIndex = 248;
             this.ultraGroupBox1.Text = "생산실적";
             // 
-            // sBtnTextEditor1
+            // sLabel6
             // 
-            appearance11.FontData.BoldAsString = "False";
-            appearance11.FontData.UnderlineAsString = "False";
-            appearance11.ForeColor = System.Drawing.Color.Black;
-            this.sBtnTextEditor1.Appearance = appearance11;
-            this.sBtnTextEditor1.btnImgType = DC00_Component.SBtnTextEditor.ButtonImgTypeEnum.Type1;
-            this.sBtnTextEditor1.btnWidth = 26;
-            this.sBtnTextEditor1.Location = new System.Drawing.Point(67, 30);
-            this.sBtnTextEditor1.Name = "sBtnTextEditor1";
-            this.sBtnTextEditor1.RequireFlag = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
-            this.sBtnTextEditor1.RequirePop = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
-            this.sBtnTextEditor1.Size = new System.Drawing.Size(210, 35);
-            this.sBtnTextEditor1.TabIndex = 0;
+            appearance29.FontData.BoldAsString = "False";
+            appearance29.FontData.UnderlineAsString = "False";
+            appearance29.ForeColor = System.Drawing.Color.Black;
+            appearance29.TextHAlignAsString = "Right";
+            appearance29.TextVAlignAsString = "Middle";
+            this.sLabel6.Appearance = appearance29;
+            this.sLabel6.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
+            this.sLabel6.DbField = null;
+            this.sLabel6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sLabel6.Location = new System.Drawing.Point(793, 37);
+            this.sLabel6.Name = "sLabel6";
+            this.sLabel6.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
+            this.sLabel6.Size = new System.Drawing.Size(387, 23);
+            this.sLabel6.TabIndex = 249;
+            this.sLabel6.Text = "반드시 작업자를 선택 후 작업 진행 할 것";
             // 
-            // txtWorkerName
+            // BTNworker
             // 
-            this.txtWorkerName.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.txtWorkerName.Location = new System.Drawing.Point(283, 33);
-            this.txtWorkerName.Name = "txtWorkerName";
-            this.txtWorkerName.Size = new System.Drawing.Size(313, 30);
-            this.txtWorkerName.TabIndex = 249;
+            this.BTNworker.Location = new System.Drawing.Point(612, 25);
+            this.BTNworker.Name = "BTNworker";
+            this.BTNworker.Size = new System.Drawing.Size(163, 46);
+            this.BTNworker.TabIndex = 250;
+            this.BTNworker.Text = "작업자등록";
+            this.BTNworker.Click += new System.EventHandler(this.BTNworker_Click);
             // 
             // sLabel5
             // 
@@ -398,31 +403,28 @@
             this.sLabel5.TabIndex = 249;
             this.sLabel5.Text = "작업자";
             // 
-            // BTNworker
+            // txtWorkerName
             // 
-            this.BTNworker.Location = new System.Drawing.Point(612, 25);
-            this.BTNworker.Name = "BTNworker";
-            this.BTNworker.Size = new System.Drawing.Size(163, 46);
-            this.BTNworker.TabIndex = 250;
-            this.BTNworker.Text = "작업자등록";
+            this.txtWorkerName.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.txtWorkerName.Location = new System.Drawing.Point(283, 33);
+            this.txtWorkerName.Name = "txtWorkerName";
+            this.txtWorkerName.Size = new System.Drawing.Size(313, 30);
+            this.txtWorkerName.TabIndex = 249;
             // 
-            // sLabel6
+            // txtWID
             // 
-            appearance29.FontData.BoldAsString = "False";
-            appearance29.FontData.UnderlineAsString = "False";
-            appearance29.ForeColor = System.Drawing.Color.Black;
-            appearance29.TextHAlignAsString = "Right";
-            appearance29.TextVAlignAsString = "Middle";
-            this.sLabel6.Appearance = appearance29;
-            this.sLabel6.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
-            this.sLabel6.DbField = null;
-            this.sLabel6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel6.Location = new System.Drawing.Point(793, 37);
-            this.sLabel6.Name = "sLabel6";
-            this.sLabel6.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
-            this.sLabel6.Size = new System.Drawing.Size(387, 23);
-            this.sLabel6.TabIndex = 249;
-            this.sLabel6.Text = "반드시 작업자를 선택 후 작업 진행 할 것";
+            appearance11.FontData.BoldAsString = "False";
+            appearance11.FontData.UnderlineAsString = "False";
+            appearance11.ForeColor = System.Drawing.Color.Black;
+            this.txtWID.Appearance = appearance11;
+            this.txtWID.btnImgType = DC00_Component.SBtnTextEditor.ButtonImgTypeEnum.Type1;
+            this.txtWID.btnWidth = 26;
+            this.txtWID.Location = new System.Drawing.Point(67, 30);
+            this.txtWID.Name = "txtWID";
+            this.txtWID.RequireFlag = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
+            this.txtWID.RequirePop = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
+            this.txtWID.Size = new System.Drawing.Size(210, 35);
+            this.txtWID.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -443,47 +445,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lot투입";
             // 
-            // txtInLotNo
+            // Btn_OrderClose
             // 
-            this.txtInLotNo.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.txtInLotNo.Location = new System.Drawing.Point(142, 40);
-            this.txtInLotNo.Name = "txtInLotNo";
-            this.txtInLotNo.Size = new System.Drawing.Size(313, 30);
-            this.txtInLotNo.TabIndex = 248;
+            this.Btn_OrderClose.Location = new System.Drawing.Point(1080, 60);
+            this.Btn_OrderClose.Name = "Btn_OrderClose";
+            this.Btn_OrderClose.Size = new System.Drawing.Size(163, 46);
+            this.Btn_OrderClose.TabIndex = 257;
+            this.Btn_OrderClose.Text = "작업 지시 종료";
             // 
-            // sLabel7
+            // btn_Product
             // 
-            appearance1.FontData.BoldAsString = "False";
-            appearance1.FontData.UnderlineAsString = "False";
-            appearance1.ForeColor = System.Drawing.Color.Black;
-            appearance1.TextHAlignAsString = "Right";
-            appearance1.TextVAlignAsString = "Middle";
-            this.sLabel7.Appearance = appearance1;
-            this.sLabel7.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
-            this.sLabel7.DbField = null;
-            this.sLabel7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel7.Location = new System.Drawing.Point(1, 46);
-            this.sLabel7.Name = "sLabel7";
-            this.sLabel7.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
-            this.sLabel7.Size = new System.Drawing.Size(135, 23);
-            this.sLabel7.TabIndex = 249;
-            this.sLabel7.Text = "투입 LOT 번호";
+            this.btn_Product.Location = new System.Drawing.Point(1080, 8);
+            this.btn_Product.Name = "btn_Product";
+            this.btn_Product.Size = new System.Drawing.Size(163, 46);
+            this.btn_Product.TabIndex = 257;
+            this.btn_Product.Text = "생산 실적 등록";
             // 
-            // BtnLotNOin
+            // txtInferior
             // 
-            this.BtnLotNOin.Location = new System.Drawing.Point(470, 31);
-            this.BtnLotNOin.Name = "BtnLotNOin";
-            this.BtnLotNOin.Size = new System.Drawing.Size(163, 46);
-            this.BtnLotNOin.TabIndex = 251;
-            this.BtnLotNOin.Text = "투입";
+            this.txtInferior.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.txtInferior.Location = new System.Drawing.Point(928, 70);
+            this.txtInferior.Name = "txtInferior";
+            this.txtInferior.Size = new System.Drawing.Size(152, 30);
+            this.txtInferior.TabIndex = 255;
             // 
-            // Btn_Run
+            // sLabel9
             // 
-            this.Btn_Run.Location = new System.Drawing.Point(624, 31);
-            this.Btn_Run.Name = "Btn_Run";
-            this.Btn_Run.Size = new System.Drawing.Size(163, 46);
-            this.Btn_Run.TabIndex = 252;
-            this.Btn_Run.Text = "가동";
+            appearance8.FontData.BoldAsString = "False";
+            appearance8.FontData.UnderlineAsString = "False";
+            appearance8.ForeColor = System.Drawing.Color.Black;
+            appearance8.TextHAlignAsString = "Right";
+            appearance8.TextVAlignAsString = "Middle";
+            this.sLabel9.Appearance = appearance8;
+            this.sLabel9.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
+            this.sLabel9.DbField = null;
+            this.sLabel9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sLabel9.Location = new System.Drawing.Point(839, 73);
+            this.sLabel9.Name = "sLabel9";
+            this.sLabel9.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
+            this.sLabel9.Size = new System.Drawing.Size(82, 23);
+            this.sLabel9.TabIndex = 256;
+            this.sLabel9.Text = "불량수량";
             // 
             // txtFine
             // 
@@ -511,55 +513,57 @@
             this.sLabel8.TabIndex = 256;
             this.sLabel8.Text = "양품수량";
             // 
-            // sLabel9
+            // Btn_Run
             // 
-            appearance8.FontData.BoldAsString = "False";
-            appearance8.FontData.UnderlineAsString = "False";
-            appearance8.ForeColor = System.Drawing.Color.Black;
-            appearance8.TextHAlignAsString = "Right";
-            appearance8.TextVAlignAsString = "Middle";
-            this.sLabel9.Appearance = appearance8;
-            this.sLabel9.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
-            this.sLabel9.DbField = null;
-            this.sLabel9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel9.Location = new System.Drawing.Point(839, 73);
-            this.sLabel9.Name = "sLabel9";
-            this.sLabel9.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
-            this.sLabel9.Size = new System.Drawing.Size(82, 23);
-            this.sLabel9.TabIndex = 256;
-            this.sLabel9.Text = "불량수량";
+            this.Btn_Run.Location = new System.Drawing.Point(624, 31);
+            this.Btn_Run.Name = "Btn_Run";
+            this.Btn_Run.Size = new System.Drawing.Size(163, 46);
+            this.Btn_Run.TabIndex = 252;
+            this.Btn_Run.Text = "가동";
+            this.Btn_Run.Click += new System.EventHandler(this.Btn_Run_Click);
             // 
-            // txtInferior
+            // BtnLotNOin
             // 
-            this.txtInferior.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.txtInferior.Location = new System.Drawing.Point(928, 70);
-            this.txtInferior.Name = "txtInferior";
-            this.txtInferior.Size = new System.Drawing.Size(152, 30);
-            this.txtInferior.TabIndex = 255;
+            this.BtnLotNOin.Location = new System.Drawing.Point(470, 31);
+            this.BtnLotNOin.Name = "BtnLotNOin";
+            this.BtnLotNOin.Size = new System.Drawing.Size(163, 46);
+            this.BtnLotNOin.TabIndex = 251;
+            this.BtnLotNOin.Text = "투입";
+            this.BtnLotNOin.Click += new System.EventHandler(this.BtnLotNOin_Click);
             // 
-            // btn_Product
+            // txtInLotNo
             // 
-            this.btn_Product.Location = new System.Drawing.Point(1080, 8);
-            this.btn_Product.Name = "btn_Product";
-            this.btn_Product.Size = new System.Drawing.Size(163, 46);
-            this.btn_Product.TabIndex = 257;
-            this.btn_Product.Text = "생산 실적 등록";
+            this.txtInLotNo.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.txtInLotNo.Location = new System.Drawing.Point(142, 40);
+            this.txtInLotNo.Name = "txtInLotNo";
+            this.txtInLotNo.Size = new System.Drawing.Size(313, 30);
+            this.txtInLotNo.TabIndex = 248;
             // 
-            // Btn_OrderClose
+            // sLabel7
             // 
-            this.Btn_OrderClose.Location = new System.Drawing.Point(1080, 60);
-            this.Btn_OrderClose.Name = "Btn_OrderClose";
-            this.Btn_OrderClose.Size = new System.Drawing.Size(163, 46);
-            this.Btn_OrderClose.TabIndex = 257;
-            this.Btn_OrderClose.Text = "작업 지시 종료";
+            appearance1.FontData.BoldAsString = "False";
+            appearance1.FontData.UnderlineAsString = "False";
+            appearance1.ForeColor = System.Drawing.Color.Black;
+            appearance1.TextHAlignAsString = "Right";
+            appearance1.TextVAlignAsString = "Middle";
+            this.sLabel7.Appearance = appearance1;
+            this.sLabel7.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
+            this.sLabel7.DbField = null;
+            this.sLabel7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sLabel7.Location = new System.Drawing.Point(1, 46);
+            this.sLabel7.Name = "sLabel7";
+            this.sLabel7.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
+            this.sLabel7.Size = new System.Drawing.Size(135, 23);
+            this.sLabel7.TabIndex = 249;
+            this.sLabel7.Text = "투입 LOT 번호";
             // 
-            // PP_ActualOutProduct
+            // PP_ActureOutProduct
             // 
             this.ClientSize = new System.Drawing.Size(1298, 778);
-            this.Name = "PP_ActualOutProduct";
+            this.Name = "PP_ActureOutProduct";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "생산 실적 등록";
-            this.Load += new System.EventHandler(this.PP_ActualOutProduct_Load);
+            this.Load += new System.EventHandler(this.PP_ActureOutProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).EndInit();
             this.gbxHeader.ResumeLayout(false);
             this.gbxHeader.PerformLayout();
@@ -573,7 +577,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).EndInit();
             this.ultraGroupBox1.ResumeLayout(false);
             this.ultraGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sBtnTextEditor1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWID)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -608,6 +612,6 @@
         private Infragistics.Win.Misc.UltraButton BTNworker;
         private DC00_Component.SLabel sLabel5;
         private System.Windows.Forms.TextBox txtWorkerName;
-        private DC00_Component.SBtnTextEditor sBtnTextEditor1;
+        private DC00_Component.SBtnTextEditor txtWID;
     }
 }
