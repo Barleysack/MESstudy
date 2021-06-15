@@ -35,10 +35,10 @@ namespace KFQS_Form
                 _GridUtil.InitColumnUltraGrid(grid1, "ITEMCODE",               "품목 코드",           true, GridColDataType_emu.VarChar,   130, 130, Infragistics.Win.HAlign.Left, true, false);
                 _GridUtil.InitColumnUltraGrid(grid1, "ITEMNAME",               "품명",                true, GridColDataType_emu.VarChar, 130, 130, Infragistics.Win.HAlign.Left, true, false);
                 _GridUtil.InitColumnUltraGrid(grid1, "WORKER",                 "작업자",              true, GridColDataType_emu.VarChar, 160, 130, Infragistics.Win.HAlign.Left, true, false);
-                _GridUtil.InitColumnUltraGrid(grid1, "STARTDATE",               "시작일시",           true, GridColDataType_emu.DateTime24, 160, 130, Infragistics.Win.HAlign.Left, true, false);
-                _GridUtil.InitColumnUltraGrid(grid1, "ENDDATE",               "종료일시",             true, GridColDataType_emu.DateTime24, 160, 130, Infragistics.Win.HAlign.Left, true, false);
-                _GridUtil.InitColumnUltraGrid(grid1, "SPENTTIME",               "소요시간",           true, GridColDataType_emu.VarChar, 160, 130, Infragistics.Win.HAlign.Left, true, false);
-                _GridUtil.InitColumnUltraGrid(grid1, "WORKSTATUS",       "가동/비가동",               true, GridColDataType_emu.VarChar, 160, 130, Infragistics.Win.HAlign.Left, true, false);
+                _GridUtil.InitColumnUltraGrid(grid1, "STARTDATE",              "시작일시",           true, GridColDataType_emu.DateTime24, 160, 130, Infragistics.Win.HAlign.Left, true, false);
+                _GridUtil.InitColumnUltraGrid(grid1, "ENDDATE",                "종료일시",             true, GridColDataType_emu.DateTime24, 160, 130, Infragistics.Win.HAlign.Left, true, false);
+                _GridUtil.InitColumnUltraGrid(grid1, "SPENTTIME",              "소요시간",           true, GridColDataType_emu.VarChar, 160, 130, Infragistics.Win.HAlign.Left, true, false);
+                _GridUtil.InitColumnUltraGrid(grid1, "WORKSTATUS",             "가동/비가동",               true, GridColDataType_emu.VarChar, 160, 130, Infragistics.Win.HAlign.Left, true, false);
                 _GridUtil.InitColumnUltraGrid(grid1, "PRODQTY",                "생산수량",            true, GridColDataType_emu.Double,    130, 130, Infragistics.Win.HAlign.Right, true, false);
                 _GridUtil.InitColumnUltraGrid(grid1, "BADQTY",                 "불량수량",            true, GridColDataType_emu.Double,    130, 130, Infragistics.Win.HAlign.Right, true, false);
                 _GridUtil.InitColumnUltraGrid(grid1, "REMARK",                 "사유",                true, GridColDataType_emu.VarChar,    130, 130, Infragistics.Win.HAlign.Right, true,true);
@@ -52,7 +52,7 @@ namespace KFQS_Form
                 _GridUtil.SetInitUltraGridBind(grid1); //셋팅 내역 그리드와 바인딩
 
                 Common _Common = new Common();
-                Data    Table dtTemp = new DataTable();
+                DataTable dtTemp = new DataTable();
                 // PLANTCODE 기준정보 가져와서 데이터 테이블에 추가.
                 dtTemp = _Common.Standard_CODE("PLANTCODE"); 
                 // 데이터 테이블에 있는 데이터를 해당 콤보박스에 추가.
