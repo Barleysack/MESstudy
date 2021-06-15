@@ -296,6 +296,8 @@ namespace KFQS_Form
                );
                 ShowDialog(HP.RSMSG, DC00_WinForm.DialogForm.DialogType.OK);
                 HP.Commit();
+                DoInquire();
+
             }
             catch (Exception ex)
             {
@@ -356,7 +358,7 @@ namespace KFQS_Form
                                                               , HP.CreateParameter("UNITCODE"      , Convert.ToString(this.grid1.ActiveRow.Cells["IUNITCODE"].Value), DbType.String, ParameterDirection.Input)
                                                               , HP.CreateParameter("STATUS"        , sSt, DbType.String, ParameterDirection.Input)
                                                                     );
-
+                    DoInquire();
 
                 }
             }

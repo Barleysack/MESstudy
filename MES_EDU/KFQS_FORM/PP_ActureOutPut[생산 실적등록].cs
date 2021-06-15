@@ -177,6 +177,7 @@ namespace KFQS_Form
                 {
                     helper.Commit();
                     ShowDialog(helper.RSMSG, DC00_WinForm.DialogForm.DialogType.OK);
+                    DoInquire();
                 }
                 else
                 {
@@ -229,6 +230,7 @@ namespace KFQS_Form
                 {
                     helper.Commit();
                     ShowDialog(helper.RSMSG, DC00_WinForm.DialogForm.DialogType.OK);
+                    DoInquire();
                 }
                 else
                 {
@@ -295,6 +297,7 @@ namespace KFQS_Form
                 {
                     helper.Commit();
                     ShowDialog("정상적으로 등록 되어부러써"+helper.RSMSG, DC00_WinForm.DialogForm.DialogType.OK);
+                    DoInquire();
 
                 }
                 else
@@ -374,8 +377,8 @@ namespace KFQS_Form
                                                                    , helper.CreateParameter("ITEMCODE", Convert.ToString(this.grid1.ActiveRow.Cells["ITEMCODE"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("UNITCODE", Convert.ToString(this.grid1.ActiveRow.Cells["UNITCODE"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("PRODQTY", dtotal, DbType.String, ParameterDirection.Input)
-                                                                  , helper.CreateParameter("BADQTY", dErrorqty, DbType.String, ParameterDirection.Input)
-                                                                   , helper.CreateParameter("ERRORQTY", dtotalerror, DbType.String, ParameterDirection.Input)
+                                                                  , helper.CreateParameter("BADQTY", dtotalerror, DbType.String, ParameterDirection.Input)
+                                                                
                                                                    , helper.CreateParameter("MATLOTNO", Convert.ToString(this.grid1.ActiveRow.Cells["MATLOTNO"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("CITEMCODE", Convert.ToString(this.grid1.ActiveRow.Cells["COMPONENT"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("CUNITCODE", Convert.ToString(this.grid1.ActiveRow.Cells["CUNITCODE"].Value), DbType.String, ParameterDirection.Input)
