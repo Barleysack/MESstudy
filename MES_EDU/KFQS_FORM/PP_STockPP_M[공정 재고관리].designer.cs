@@ -51,6 +51,7 @@
             this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
             this.cboItemType = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
             this.sLabel1 = new DC00_Component.SLabel();
+            this.ultraButton2 = new Infragistics.Win.Misc.UltraButton();
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).BeginInit();
             this.gbxHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbxBody)).BeginInit();
@@ -67,6 +68,7 @@
             this.gbxHeader.ContentPadding.Left = 2;
             this.gbxHeader.ContentPadding.Right = 2;
             this.gbxHeader.ContentPadding.Top = 4;
+            this.gbxHeader.Controls.Add(this.ultraButton2);
             this.gbxHeader.Controls.Add(this.cboItemType);
             this.gbxHeader.Controls.Add(this.sLabel1);
             this.gbxHeader.Controls.Add(this.ultraButton1);
@@ -110,7 +112,7 @@
             this.cboPlantCode.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.cboPlantCode.Location = new System.Drawing.Point(57, 22);
             this.cboPlantCode.Name = "cboPlantCode";
-            this.cboPlantCode.Size = new System.Drawing.Size(145, 27);
+            this.cboPlantCode.Size = new System.Drawing.Size(145, 32);
             this.cboPlantCode.TabIndex = 0;
             // 
             // grid1
@@ -229,19 +231,19 @@
             // 
             // ultraButton1
             // 
-            this.ultraButton1.Location = new System.Drawing.Point(920, 13);
+            this.ultraButton1.Location = new System.Drawing.Point(885, 7);
             this.ultraButton1.Name = "ultraButton1";
-            this.ultraButton1.Size = new System.Drawing.Size(152, 44);
+            this.ultraButton1.Size = new System.Drawing.Size(104, 44);
             this.ultraButton1.TabIndex = 188;
             this.ultraButton1.Text = "LOT 발행";
-            //this.ultraButton1.Click += new System.EventHandler(this.ultraButton1_Click);
+            this.ultraButton1.Click += new System.EventHandler(this.ultraButton1_Click);
             // 
             // cboItemType
             // 
             this.cboItemType.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.cboItemType.Location = new System.Drawing.Point(318, 22);
             this.cboItemType.Name = "cboItemType";
-            this.cboItemType.Size = new System.Drawing.Size(251, 27);
+            this.cboItemType.Size = new System.Drawing.Size(251, 32);
             this.cboItemType.TabIndex = 189;
             // 
             // sLabel1
@@ -261,6 +263,15 @@
             this.sLabel1.Size = new System.Drawing.Size(83, 23);
             this.sLabel1.TabIndex = 190;
             this.sLabel1.Text = "품목구분";
+            // 
+            // ultraButton2
+            // 
+            this.ultraButton2.Location = new System.Drawing.Point(995, 9);
+            this.ultraButton2.Name = "ultraButton2";
+            this.ultraButton2.Size = new System.Drawing.Size(107, 39);
+            this.ultraButton2.TabIndex = 191;
+            this.ultraButton2.Text = "바코드";
+            this.ultraButton2.Click += new System.EventHandler(this.ultraButton2_Click);
             // 
             // PP_STockPP_M
             // 
@@ -291,5 +302,6 @@
         private Infragistics.Win.Misc.UltraButton ultraButton1;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor cboItemType;
         private DC00_Component.SLabel sLabel1;
+        private Infragistics.Win.Misc.UltraButton ultraButton2;
     }
 }

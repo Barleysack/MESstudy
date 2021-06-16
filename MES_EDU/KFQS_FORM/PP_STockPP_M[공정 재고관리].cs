@@ -197,7 +197,63 @@ namespace KFQS_Form
             }
         }
         #endregion
-     
+
+        private void ultraButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ultraButton2_Click(object sender, EventArgs e)
+        {
+            if (grid1.ActiveRow == null) return;
+            if (Convert.ToString(this.grid1.ActiveRow.Cells["ITEMTYPE"].Value) == "FERT")
+            {
+                DBHelper helper = new DBHelper();
+                try
+                {
+                    string sPlantcode = Convert.ToString(grid1.ActiveRow.Cells["PLANTCODE"].Value);
+                    string sLotNo = Convert.ToString(grid1.ActiveRow.Cells["LOTNO"].Value);
+
+                    DataTable DTTEMP = helper.FillTable("04PP_StockPP_S2", CommandType.StoredProcedure,
+                                                                    helper.CreateParameter("PLANTCODE", sPlantcode, DbType.String, ParameterDirection.Input)
+                                                                   , helper.CreateParameter("LOTNO", sLotNo, DbType.String, ParameterDirection.Input)
+
+
+
+
+                        );
+                    if (DTTEMP.Rows.Count == 0)
+                    {
+                        ShowDialog("바코드 정보를 조회할 내용이 없습니다.", DialogForm.DialogType.OK);
+                        return;
+                    }
+                    //바코드 디자인 선언
+
+                    Report_LotBacodeFERT sRF = new Report_LotBacodeFERT();
+                    //바코드 디자인이 첨부될 레포트 북 클래스 선언
+
+                    Telerik.Reporting.ReportBook repBook = new Telerik.Reporting.ReportBook();
+
+                    sRF.DataSource = DTTEMP;
+                    //레포트 북에 디자인 추가. 
+                    repBook.Reports.Add(sRF);
+                    ReportViewer BarcodeViewer = new ReportViewer(repBook, 1);
+                    //미리보기 창 호출 
+                    BarcodeViewer.ShowDialog();
+
+                }
+                catch (Exception EX)
+                {
+
+                    helper.Rollback();
+                    ShowDialog(EX.ToString());
+                }
+                finally
+                {
+                    helper.Close();
+                }
+            }
+        }
     }
 }
 
