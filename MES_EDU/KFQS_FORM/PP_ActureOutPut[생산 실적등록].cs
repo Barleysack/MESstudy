@@ -370,15 +370,14 @@ namespace KFQS_Form
             DBHelper helper = new DBHelper("", true);
             try
             {
-                helper.ExecuteNoneQuery("04PP_ActureOutput_U2", CommandType.StoredProcedure
+                helper.ExecuteNoneQuery("PP_4_ActureOutput_U2", CommandType.StoredProcedure
                                                                    , helper.CreateParameter("PLANTCODE", "1000", DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("WORKCENTERCODE", Convert.ToString(this.grid1.ActiveRow.Cells["WORKCENTERCODE"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("ORDERNO", Convert.ToString(this.grid1.ActiveRow.Cells["ORDERNO"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("ITEMCODE", Convert.ToString(this.grid1.ActiveRow.Cells["ITEMCODE"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("UNITCODE", Convert.ToString(this.grid1.ActiveRow.Cells["UNITCODE"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("PRODQTY", dtotal, DbType.String, ParameterDirection.Input)
-                                                                  , helper.CreateParameter("BADQTY", dtotalerror, DbType.String, ParameterDirection.Input)
-                                                                
+                                                                   , helper.CreateParameter("BADQTY", dtotalerror, DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("MATLOTNO", Convert.ToString(this.grid1.ActiveRow.Cells["MATLOTNO"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("CITEMCODE", Convert.ToString(this.grid1.ActiveRow.Cells["COMPONENT"].Value), DbType.String, ParameterDirection.Input)
                                                                    , helper.CreateParameter("CUNITCODE", Convert.ToString(this.grid1.ActiveRow.Cells["CUNITCODE"].Value), DbType.String, ParameterDirection.Input)

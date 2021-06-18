@@ -115,7 +115,7 @@ namespace KFQS_Form
                 string sStartDate = string.Format("{0:yyyy-MM-dd}", dtStartDate.Value);
                 string sEndDate = string.Format("{0:yyyy-MM-dd}", dtEndDate.Value);
 
-                rtnDtTemp = helper.FillTable("18PP_STockOutWM_S1", CommandType.StoredProcedure
+                rtnDtTemp = helper.FillTable("04WM_StockOutWM_S1", CommandType.StoredProcedure
                                     , helper.CreateParameter("PLANTCODE",   sPlantCode,  DbType.String, ParameterDirection.Input)
                                     , helper.CreateParameter("CUSTCODE",    sCustCode,  DbType.String, ParameterDirection.Input)
                                     , helper.CreateParameter("STARTDATE",   sStartDate,  DbType.String, ParameterDirection.Input)
@@ -159,14 +159,24 @@ namespace KFQS_Form
             DataTable dt = grid1.chkChange();
             if (dt == null)
                 return;
+            int ChkCount = 0;
             string sCarNo = Convert.ToString(dt.Rows[0]["CARNO"]);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                if (Convert.ToString(dt.Rows[i]["CHK"]) != "1") continue;
                 if (sCarNo != Convert.ToString(dt.Rows[i]["CARNO"]))
                 {
                     ShowDialog("차량 번호가 동일하지 않은 출고 등록 및 거래명세서는 발행 할 수 없습니다.", DialogForm.DialogType.OK);
                     return;
                 }
+                ChkCount += 1;
+                
+            }
+            if (ChkCount == 0)
+            {
+                ShowDialog("선택된 출고 내역이 없습니다.", DialogForm.DialogType.OK);
+                return;
+
             }
             DBHelper helper = new DBHelper("", true);
             try
@@ -190,7 +200,8 @@ namespace KFQS_Form
                             break;
                         case DataRowState.Modified:
                             #region 수정 
-                            helper.ExecuteNoneQuery("18WM_StockOutWM_U1", CommandType.StoredProcedure
+                            if (Convert.ToString(dt.Rows[0]["CHK"]) != "1") continue;
+                            helper.ExecuteNoneQuery("04WM_StockOutWM_U1", CommandType.StoredProcedure
                                                   , helper.CreateParameter("PLANTCODE", Convert.ToString(drRow["PLANTCODE"]), DbType.String, ParameterDirection.Input)
                                                   , helper.CreateParameter("SHIPNO", Convert.ToString(drRow["SHIPNO"]), DbType.String, ParameterDirection.Input)
                                                   , helper.CreateParameter("TRADINGNO", sTradingNo, DbType.String, ParameterDirection.Input)
@@ -241,7 +252,7 @@ namespace KFQS_Form
                 string sPlantCode = Convert.ToString(grid1.ActiveRow.Cells["PLANTCODE"].Value);
                 string sShipNo    = Convert.ToString(grid1.ActiveRow.Cells["SHIPNO"].Value);
 
-                rtnDtTemp = helper.FillTable("18PP_STockOutWM_S2", CommandType.StoredProcedure
+                rtnDtTemp = helper.FillTable("04WM_STockOutWM_S2", CommandType.StoredProcedure
                                     , helper.CreateParameter("PLANTCODE", sPlantCode, DbType.String, ParameterDirection.Input)
                                     , helper.CreateParameter("SHIPNO", sShipNo, DbType.String, ParameterDirection.Input)
                                     );
