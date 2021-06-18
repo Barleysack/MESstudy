@@ -46,6 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="WM_StockOutWM[제품 출고 처리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WM_StockOutWM[제품 출고 처리].designer.cs">
+      <DependentUpon>WM_StockOutWM[제품 출고 처리].cs</DependentUpon>
+    </Compile>
     <Compile Include="WM_StockWM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,32 +162,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DC00_assm, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_assm">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_assm.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_Component, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_Component">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_Component.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_Frame, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_Frame">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_Frame.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_PuMan, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_PuMan">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_PuMan.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_System, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_System.dll</HintPath>
-    </Reference>
-    <Reference Include="DC00_WinForm, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_WinForm">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_WinForm.dll</HintPath>
     </Reference>
     <Reference Include="DC_POPUP">
-      <HintPath>..\DC_POPUP\bin\Debug\DC_POPUP.dll</HintPath>
+      <HintPath>..\KFQS_MES_2021\bin\Debug\DC_POPUP.dll</HintPath>
     </Reference>
     <Reference Include="Infragistics2.Shared.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.Misc.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -211,6 +208,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="WM_StockOutWM[제품 출고 처리].resx">
+      <DependentUpon>WM_StockOutWM[제품 출고 처리].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WM_StockWM.resx">
       <DependentUpon>WM_StockWM.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +270,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KFQS_MES_2021\KFQS_MES_2021.csproj">
+      <Project>{3eb2a7e8-de91-4290-8080-b292b0a0f8b9}</Project>
+      <Name>KFQS_MES_2021</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

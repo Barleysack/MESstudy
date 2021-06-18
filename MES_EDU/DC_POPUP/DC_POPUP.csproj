@@ -40,28 +40,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DataMatrix.net">
-      <HintPath>..\DC_CG\DLL\DataMatrix.net.dll</HintPath>
+      <HintPath>..\KFQS_MES_2021\bin\Debug\DataMatrix.net.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_assm, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_assm">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_assm.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_Component, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_Component">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_Component.dll</HintPath>
     </Reference>
     <Reference Include="DC00_Frame">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_Frame.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_PuMan, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_PuMan">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_PuMan.dll</HintPath>
     </Reference>
     <Reference Include="DC00_System">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_System.dll</HintPath>
     </Reference>
-    <Reference Include="DC00_WinForm, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DC00_WinForm">
       <HintPath>..\KFQS_MES_2021\bin\Debug\DC00_WinForm.dll</HintPath>
     </Reference>
     <Reference Include="Infragistics2.Documents.Excel.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -76,9 +72,6 @@
     <Reference Include="Infragistics2.Win.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
       <HintPath>..\SmartMES\DLL\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\SmartMES\DLL\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
