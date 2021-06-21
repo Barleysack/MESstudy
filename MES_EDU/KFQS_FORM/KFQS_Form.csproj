@@ -46,6 +46,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="WM_StockOutWM[제품 출고 처리].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +161,12 @@
     <Compile Include="MM_PoMake%28자재 발주 및 입고%29.Designer.cs">
       <DependentUpon>MM_PoMake%28자재 발주 및 입고%29.cs</DependentUpon>
     </Compile>
+    <Compile Include="WM_TradingManager[제품출고 이력 및 거래명세서 발행].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WM_TradingManager[제품출고 이력 및 거래명세서 발행].designer.cs">
+      <DependentUpon>WM_TradingManager[제품출고 이력 및 거래명세서 발행].cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DC00_assm">
@@ -225,6 +232,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AP_ProductPlan[생산계획].resx">
       <DependentUpon>AP_ProductPlan[생산계획].cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MM_STockMM_M[자재 재고관리].resx">
       <DependentUpon>MM_STockMM_M[자재 재고관리].cs</DependentUpon>
@@ -266,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MM_PoMake%28자재 발주 및 입고%29.resx">
       <DependentUpon>MM_PoMake%28자재 발주 및 입고%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WM_TradingManager[제품출고 이력 및 거래명세서 발행].resx">
+      <DependentUpon>WM_TradingManager[제품출고 이력 및 거래명세서 발행].cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
