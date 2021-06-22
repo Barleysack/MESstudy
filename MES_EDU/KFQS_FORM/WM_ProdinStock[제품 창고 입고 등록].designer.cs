@@ -1,6 +1,6 @@
 ﻿namespace KFQS_Form
 {
-    partial class WM_ProdInStock
+    partial class WM_ProdinStock
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -83,7 +83,7 @@
             this.gbxHeader.Controls.Add(this.sLabel3);
             this.gbxHeader.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.gbxHeader.Location = new System.Drawing.Point(3, 3);
-            this.gbxHeader.Size = new System.Drawing.Size(1130, 100);
+            this.gbxHeader.Size = new System.Drawing.Size(1130, 110);
             // 
             // gbxBody
             // 
@@ -92,8 +92,8 @@
             this.gbxBody.ContentPadding.Right = 4;
             this.gbxBody.ContentPadding.Top = 6;
             this.gbxBody.Controls.Add(this.grid1);
-            this.gbxBody.Location = new System.Drawing.Point(3, 103);
-            this.gbxBody.Size = new System.Drawing.Size(1130, 672);
+            this.gbxBody.Location = new System.Drawing.Point(3, 113);
+            this.gbxBody.Size = new System.Drawing.Size(1130, 662);
             // 
             // grid1
             // 
@@ -175,7 +175,7 @@
             this.grid1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.grid1.Location = new System.Drawing.Point(6, 6);
             this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(1118, 660);
+            this.grid1.Size = new System.Drawing.Size(1118, 650);
             this.grid1.TabIndex = 8;
             this.grid1.Text = "grid1";
             this.grid1.TextRenderingMode = Infragistics.Win.TextRenderingMode.GDI;
@@ -257,17 +257,17 @@
             this.lblDate.Appearance = appearance5;
             this.lblDate.DbField = null;
             this.lblDate.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblDate.Location = new System.Drawing.Point(387, 22);
+            this.lblDate.Location = new System.Drawing.Point(372, 22);
             this.lblDate.Name = "lblDate";
             this.lblDate.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
-            this.lblDate.Size = new System.Drawing.Size(83, 23);
+            this.lblDate.Size = new System.Drawing.Size(98, 23);
             this.lblDate.TabIndex = 240;
             this.lblDate.Text = "입/출고일자";
             // 
             // cboItemCode
             // 
             this.cboItemCode.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.cboItemCode.Location = new System.Drawing.Point(112, 53);
+            this.cboItemCode.Location = new System.Drawing.Point(112, 57);
             this.cboItemCode.Name = "cboItemCode";
             this.cboItemCode.Size = new System.Drawing.Size(269, 32);
             this.cboItemCode.TabIndex = 621;
@@ -283,20 +283,20 @@
             this.lblItemCode.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
             this.lblItemCode.DbField = null;
             this.lblItemCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblItemCode.Location = new System.Drawing.Point(23, 56);
+            this.lblItemCode.Location = new System.Drawing.Point(23, 60);
             this.lblItemCode.Name = "lblItemCode";
             this.lblItemCode.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.lblItemCode.Size = new System.Drawing.Size(83, 23);
             this.lblItemCode.TabIndex = 620;
             this.lblItemCode.Text = "품목";
             // 
-            // WM_ProdInStock
+            // WM_ProdinStock
             // 
             this.ClientSize = new System.Drawing.Size(1136, 778);
-            this.Name = "WM_ProdInStock";
+            this.Name = "WM_ProdinStock";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "제품 창고 입고 등록";
-            this.Load += new System.EventHandler(this.WM_ProdInStock_Load);
+            this.Load += new System.EventHandler(this.WM_ProdinStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).EndInit();
             this.gbxHeader.ResumeLayout(false);
             this.gbxHeader.PerformLayout();

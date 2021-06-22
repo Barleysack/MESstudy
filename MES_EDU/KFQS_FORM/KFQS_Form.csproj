@@ -46,7 +46,48 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BM_Inspection[수입 검사 항목 마스터].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BM_Inspection[수입 검사 항목 마스터].designer.cs">
+      <DependentUpon>BM_Inspection[수입 검사 항목 마스터].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_ActureOutPut[생산 실적 등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_ActureOutPut[생산 실적 등록].designer.cs">
+      <DependentUpon>PP_ActureOutPut[생산 실적 등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_BadListCNT[불량 판정 정보 조회].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_BadListCNT[불량 판정 정보 조회].Designer.cs">
+      <DependentUpon>PP_BadListCNT[불량 판정 정보 조회].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_InspecRec[수입검사 이력 조회].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_InspecRec[수입검사 이력 조회].designer.cs">
+      <DependentUpon>PP_InspecRec[수입검사 이력 조회].cs</DependentUpon>
+    </Compile>
+    <Compile Include="WM_InspectionPerItem[품목별 검사항목 마스터].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WM_InspectionPerItem[품목별 검사항목 마스터].designer.cs">
+      <DependentUpon>WM_InspectionPerItem[품목별 검사항목 마스터].cs</DependentUpon>
+    </Compile>
+    <Compile Include="WM_Inspection[수입 검사 결과 등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WM_Inspection[수입 검사 결과 등록].designer.cs">
+      <DependentUpon>WM_Inspection[수입 검사 결과 등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="WM_ProdinStock[제품 창고 입고 등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WM_ProdinStock[제품 창고 입고 등록].designer.cs">
+      <DependentUpon>WM_ProdinStock[제품 창고 입고 등록].cs</DependentUpon>
+    </Compile>
     <Compile Include="WM_StockOutWM[제품 출고 처리].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,12 +99,6 @@
     </Compile>
     <Compile Include="WM_StockWM.designer.cs">
       <DependentUpon>WM_StockWM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WM_ProdInStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WM_ProdInStock.designer.cs">
-      <DependentUpon>WM_ProdInStock.cs</DependentUpon>
     </Compile>
     <Compile Include="PP_ActureOutProduct[생산 실적 등록].cs">
       <SubType>Form</SubType>
@@ -118,12 +153,6 @@
     </Compile>
     <Compile Include="PP_WorkerPerProd.designer.cs">
       <DependentUpon>PP_WorkerPerProd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PP_ActureOutPut[생산 실적등록].cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PP_ActureOutPut[생산 실적등록].designer.cs">
-      <DependentUpon>PP_ActureOutPut[생산 실적등록].cs</DependentUpon>
     </Compile>
     <Compile Include="PP_StockPP.cs">
       <SubType>Form</SubType>
@@ -193,7 +222,9 @@
     <Reference Include="Infragistics2.Win.UltraWinEditors.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.UltraWinGrid.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinPrintPreviewDialog.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.UltraWinSchedule.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics2.Win.UltraWinTabControl.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.UltraWinToolbars.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics2.Win.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -215,14 +246,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BM_Inspection[수입 검사 항목 마스터].resx">
+      <DependentUpon>BM_Inspection[수입 검사 항목 마스터].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_ActureOutPut[생산 실적 등록].resx">
+      <DependentUpon>PP_ActureOutPut[생산 실적 등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_BadListCNT[불량 판정 정보 조회].resx">
+      <DependentUpon>PP_BadListCNT[불량 판정 정보 조회].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_InspecRec[수입검사 이력 조회].resx">
+      <DependentUpon>PP_InspecRec[수입검사 이력 조회].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WM_InspectionPerItem[품목별 검사항목 마스터].resx">
+      <DependentUpon>WM_InspectionPerItem[품목별 검사항목 마스터].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WM_Inspection[수입 검사 결과 등록].resx">
+      <DependentUpon>WM_Inspection[수입 검사 결과 등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WM_ProdinStock[제품 창고 입고 등록].resx">
+      <DependentUpon>WM_ProdinStock[제품 창고 입고 등록].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WM_StockOutWM[제품 출고 처리].resx">
       <DependentUpon>WM_StockOutWM[제품 출고 처리].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WM_StockWM.resx">
       <DependentUpon>WM_StockWM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WM_ProdInStock.resx">
-      <DependentUpon>WM_ProdInStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PP_ActureOutProduct[생산 실적 등록].resx">
       <DependentUpon>PP_ActureOutProduct[생산 실적 등록].cs</DependentUpon>
@@ -251,9 +300,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PP_WorkerPerProd.resx">
       <DependentUpon>PP_WorkerPerProd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PP_ActureOutPut[생산 실적등록].resx">
-      <DependentUpon>PP_ActureOutPut[생산 실적등록].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PP_StockPP.resx">
       <DependentUpon>PP_StockPP.cs</DependentUpon>
